@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { mFetch } from "../../helpers/mFetch"
 
 
 export const ItemListContaines = ({greeting}) => {
   const [ productos, setProductos ] = useState([])
-  // llamada a mi promesa mock de una  api
   useEffect(()=>{
       mFetch()
       .then( result => setProductos(result))
@@ -32,7 +32,9 @@ export const ItemListContaines = ({greeting}) => {
                                                 <p>Stock: {product.stock}</p>
                                             </div>
                                             <div className='card-footer'>
+                                              <Link to='/descripcion'>
                                                 <button className='btn btn-outline-dark w-100'>Detalle</button>
+                                              </Link>
                                             </div>
                                         </div>
             )}

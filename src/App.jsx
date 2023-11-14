@@ -5,10 +5,11 @@
 
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 import { ItemListContaines } from './components/ItemListContainer/ItemListContaines'
+
 import { Navegador } from './components/Navegador/Navegador';
-import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -19,11 +20,13 @@ function App() {
         <Routes>
         <Route path='/' element ={<ItemListContaines greeting='saludo app'/>} />
         <Route path='/categoria' element ={<ItemListContaines greeting='saludo app'/>} />
-        <Route path='/categoria' element ={<ItemDetailContainer greeting='saludo app'/>} />
+        {/* <Route path='/' element ={<ItemDetailContainer />} /> */}
+
 
         <Route path='*' element ={<Navigate to='/'/>} />
-  
         </Routes>
+        <ItemDetailContainer />
+
 
       </div>
     </Router>
