@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-export function Navegador() {
+const Navegador = ()=> {
   return (
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
@@ -13,6 +13,7 @@ export function Navegador() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
+                        
                     <Nav.Link href="#features">Yerba</Nav.Link>
                     <Nav.Link href="#pricing">Mates</Nav.Link>
                     <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
@@ -39,3 +40,4 @@ export function Navegador() {
   )
 }
 
+export default Navegador

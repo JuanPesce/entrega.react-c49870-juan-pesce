@@ -1,4 +1,4 @@
-const products = [
+const productos = [
     {id:'1', name:'Yerba Mate Playadito 500 gr',stock:40 , gramos:500, precio:900, categoria:"comun", descripcion:'Yerba comun de mesa', imagen: 'https://cdn11.bigcommerce.com/s-abmjjefojj/images/stencil/1280x1280/products/1495/16826/Diapositiva103__03287.1680721684.JPG?c=1'},
     {id:'2', name:'Yerba Mate Playadito 1000 gr',stock:50 , gramos:1000, precio:1800, categoria:"comun", descripcion:'Yerba comun de mesa', imagen:'https://jumboargentina.vtexassets.com/arquivos/ids/711224/Yerba-Mate-Playadito-Suave-X1kg-1-854539.jpg?v=637938633804770000'},
     {id:'3', name:'Yerba Organica Mate&CO 500 gr',stock:60 , gramos:500, precio:1200, categoria:"organica", descripcion:'Yerba organica de plantacion y cosecha natural', imagen:'https://acdn.mitiendanube.com/stores/001/176/840/products/ym-mate-co-organica-despalada-500gr-001-d861c6aad956183bde16467465818309-640-0.webp'},
@@ -8,11 +8,21 @@ const products = [
     {id:'7', name:'Yerba Picada Vieja Barbacua 500 gr', stock:65, gramos:500, precio:1450, categoria:"barbacua", descripcion:'Yerba barbacua', imagen:'https://acdn.mitiendanube.com/stores/001/176/840/products/ym-picada-vieja-barbacua-500gr1-cfe0c68766bc4d138a16377059880090-640-0.webp'},
     {id:'8', name:'Yerba Mate Baldo Despalada 500 gr' , stock:12, gramos:500, precio:2700, categoria:"comun", descripcion:'Yerba comun despalada para mejor sabor', imagen:'https://acdn.mitiendanube.com/stores/001/176/840/products/ym-baldo-despalada-500gr-001-a75a5cd8101211023016916120618139-640-0.webp'   },
     {id:'9', name:'Yerba Mate Kraus Orgánica Gourmet Estuche 500 gr', stock:9, gramos:500, precio:3200, categoria:"organica", descripcion:'Yerba organica de plantacion y cosecha natural', imagen:'https://acdn.mitiendanube.com/stores/001/176/840/products/ym-kraus-organica-gourmet-estuche-500gr-001-a6e9cdc45e8dc12b0716795220225773-640-0.webp'}
-
 ]
 
-export const mFetch = () => new Promise((res,rej)=>{
+export const mFetch = (id) => new Promise((res,rej)=>{
     setTimeout(()=>{
-        res(products)
+        res(productos)
     }, 2000)
 })
+
+export const sFetch = (id) => new Promise((res, rej) => {
+    setTimeout(() => {
+      const product = productos.find(item => item.id === id);
+      if (product) {
+        res(product);
+      } else {
+        rej('Product not found');
+      }
+    }, 2000);
+  });

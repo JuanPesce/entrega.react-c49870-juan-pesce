@@ -32,7 +32,7 @@ export const ItemListContaines = ({greeting}) => {
                                                 <p>Stock: {product.stock}</p>
                                             </div>
                                             <div className='card-footer'>
-                                              <Link to='/descripcion'>
+                                              <Link to='/detalle'>
                                                 <button className='btn btn-outline-dark w-100'>Detalle</button>
                                               </Link>
                                             </div>
