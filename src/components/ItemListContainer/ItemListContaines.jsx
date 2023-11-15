@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { mFetch } from "../../helpers/mFetch"
 
 
 export const ItemListContaines = ({greeting}) => {
   const [ productos, setProductos ] = useState([])
+  const {cid} = useParams()
+
   useEffect(()=>{
-      mFetch()
-      .then( result => setProductos(result))
-      .catch(err => console.log(err))
-  }, [])
-  
+    if (cid) {
+        mFetch()
+        .then(  result => setProductos(result.filter(product => product.categoria === cid)))
+        .catch(err => console.log(err))            
+    } else {
+        mFetch()
+        .then(  result => setProductos(result))
+        .catch(err => console.log(err))            
+    }
+}, [cid])
   
   return (
     <div>
@@ -32,7 +39,7 @@ export const ItemListContaines = ({greeting}) => {
                                                 <p>Stock: {product.stock}</p>
                                             </div>
                                             <div className='card-footer'>
-                                              <Link to='/detalle'>
+                                              <Link to={`/detalle/${product.id}`}>
                                                 <button className='btn btn-outline-dark w-100'>Detalle</button>
                                               </Link>
                                             </div>

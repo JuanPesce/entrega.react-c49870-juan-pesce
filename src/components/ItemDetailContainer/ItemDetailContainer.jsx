@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
-import { sFetch } from "../../helpers/mFetch"
+import { mFetch } from "../../helpers/mFetch"
+import { useParams } from "react-router-dom"
 
 
 export const ItemDetailBatch = () => {
     const   [product, setproduct] = useState({})
+    const {pid} = useParams()
     useEffect(()=>{
-        sFetch('1')
+        mFetch(pid)
         .then(res=> setproduct(res))
         .catch(err=> console.log('Error: ',err))
                 
@@ -13,20 +15,20 @@ export const ItemDetailBatch = () => {
 
 
 return(
-    <div>
-        <div>
-            <h1>Descripcion del Producto</h1>
+    <div className="row">
+        <div className="col-12 text-center mt-5">
+            <h2>Descripcion del Producto</h2>
         </div>
-        <div>
-            <img src={product.imagen} alt={product.name} className="img-fluid" />
-            <h2>{product.name}</h2>
-        </div>
-        <div>
-            <h4>Descripcion: {product.descripcion}</h4>
-            <h4>Precio: ${product.precio}</h4>
-            <h4>Stock: {product.stock}</h4>
-
-        </div>
+        <div className="col-6 text-center mt-5">
+                <img src={product.imagen} alt={product.name} className="img-fluid   " />
+            </div>
+            <div className="col-6 mt-5">
+                <h2>{product.name}</h2>
+                <h4>Descripcion: {product.descripcion}</h4>
+                <h4>Precio: ${product.precio}</h4>
+                <h4>Stock: {product.stock}</h4>
+            </div>
+        
     </div>
 
 )
