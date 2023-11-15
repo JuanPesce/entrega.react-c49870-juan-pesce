@@ -10,14 +10,14 @@ const Navegador = ()=> {
   return (
         <Navbar collapseOnSelect expand="lg" className="bg-success">
             <Container>
-                <Navbar.Brand href="#home">Tienda Yerba Mate</Navbar.Brand>
+                <Navbar.Brand href="#home" className="text-light">Tienda Yerba Mate</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/'>Inicio</NavLink>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/categoria/comun'>Comun</NavLink>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/categoria/organica'>Organica</NavLink>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/categoria/barbacua'>Barbacua</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light text-dark' : 'btn text-light'} to='/'>Inicio</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light text-dark' : 'btn text-light'} to='/categoria/comun'>Comun</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light text-dark' : 'btn text-light'} to='/categoria/organica'>Organica</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light text-dark' : 'btn text-light'} to='/categoria/barbacua'>Barbacua</NavLink>
                     {/* <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">
@@ -31,7 +31,7 @@ const Navegador = ()=> {
                     </NavDropdown> */}
                     </Nav>
                     <Nav>
-                    <Nav.Link href="#deets">Shop!</Nav.Link>
+                    <Nav.Link href="#deets" className="text-light">Shop!</Nav.Link>
                     <Nav.Link eventKey={2} href="#memes">
                         <Link>
                            <CartWidget />

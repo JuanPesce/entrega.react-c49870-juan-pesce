@@ -18,7 +18,7 @@ function App() {
         <Navegador />
         <Routes>
         <Route path='/' element ={<ItemListContaines greeting='Bienvenidos'/>} />
-        <Route path='/categoria/:cid' element ={<ItemListContaines greeting='saludo app'/>} />
+        <Route path='/categoria/:cid' element ={<ItemListContaines greeting='Bienvenidos'/>} />
         <Route path='/detalle/:pid' element ={<ItemDetailBatch />} />
 
         <Route path='*' element ={<Navigate to='/'/>} />

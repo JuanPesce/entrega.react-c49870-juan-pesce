@@ -14,8 +14,8 @@ export const ItemDetailBatch = () => {
                 
     }, [] )
 
-    const onAdd = (cantidad) => {
-        console.log(`la cantidad seleccionada es: ${cantidad}`)
+    const handleOnAdd = () => {
+        onAdd(counter)
     }
 
 
