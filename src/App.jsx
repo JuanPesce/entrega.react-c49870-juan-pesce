@@ -17,7 +17,7 @@ function App() {
       <div className='container'>
         <Navegador />
         <Routes>
-        <Route path='/' element ={<ItemListContaines greeting='saludo app'/>} />
+        <Route path='/' element ={<ItemListContaines greeting='Bienvenidos'/>} />
         <Route path='/categoria/:cid' element ={<ItemListContaines greeting='saludo app'/>} />
         <Route path='/detalle/:pid' element ={<ItemDetailBatch />} />
 

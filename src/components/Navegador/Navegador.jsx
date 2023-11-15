@@ -8,16 +8,16 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navegador = ()=> {
   return (
-        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <Navbar collapseOnSelect expand="lg" className="bg-success">
             <Container>
                 <Navbar.Brand href="#home">Tienda Yerba Mate</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-success' : 'btn'} to='/'>Inicio</NavLink>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-success' : 'btn'} to='/categoria/comun'>Comun</NavLink>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-success' : 'btn'} to='/categoria/organica'>Organica</NavLink>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-success' : 'btn'} to='/categoria/barbacua'>Barbacua</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/'>Inicio</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/categoria/comun'>Comun</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/categoria/organica'>Organica</NavLink>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light' : 'btn'} to='/categoria/barbacua'>Barbacua</NavLink>
                     {/* <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">
