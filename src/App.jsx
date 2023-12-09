@@ -10,28 +10,28 @@ import  Navegador from './components/Navegador/Navegador';
 import { ItemDetailBatch } from './components/ItemDetailContainer/ItemDetailContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ItemCounter } from './components/ItemCounter/ItemCounter';
+import { cartContext, cartContextProvider } from './components/contexts/CartContext';
 
 function App() {
 
-  const onAdd = (cantidad) => {
-    console.log(cantidad)
-  }
 
   return (
+    
+    
     <Router>
-      <div className='container'>
-        <Navegador />
-        <Routes>
-        <Route path='/' element ={<ItemListContaines greeting='Bienvenidos'/>} />
-        <Route path='/categoria/:cid' element ={<ItemListContaines greeting='Bienvenidos'/>} />
-        <Route path='/detalle/:pid' element ={<ItemDetailBatch />} />
+      <cartContextProvider>
+        <div className='container'>
+          <Navegador />
+          <Routes>
+          <Route path='/' element ={<ItemListContaines greeting='Bienvenidos'/>} />
+          <Route path='/categoria/:cid' element ={<ItemListContaines greeting='Bienvenidos'/>} />
+          <Route path='/detalle/:pid' element ={<ItemDetailBatch />} />
+          {/* <Route path='/cart' element ={< />} /> */}
 
-        <Route path='*' element ={<Navigate to='/'/>} />
-        </Routes>
-
-        <ItemCounter onAdd={onAdd} />
-
-      </div>
+          <Route path='*' element ={<Navigate to='/'/>} />
+          </Routes>
+        </div>
+      </cartContextProvider>
     </Router>
   )
 }
