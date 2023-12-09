@@ -1,7 +1,10 @@
 import { ItemCounter } from "../../ItemCounter/ItemCounter"
 
 
-export const ItemDetail =({imagen, name, descripcion,precio,stock, onAdd}) =>{
+export const ItemDetail =({imagen, name, descripcion,precio,stock}) =>{
+    const onAdd = (cantidad) => {
+        console.log(cantidad)
+      }
     return(
     <div className="row">
     <div className="col-12 text-center mt-5">

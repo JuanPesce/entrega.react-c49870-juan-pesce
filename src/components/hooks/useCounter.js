@@ -5,16 +5,16 @@ import { useState } from "react"
 export const useCounter =(min, max) => {
     const [counter, setCounter] = useState(min)
 
-        const handleSumar = () => {
+        const handlerSumar = () => {
             if (counter < max) {
                 setCounter(counter + 1)
             }
         }
-        const handleRestar = () => {
+        const handlerRestar = () => {
             if (counter > min ) {
                 setCounter(counter - 1)
             }
         }
  
-        return {counter, handleSumar, handleRestar}
+        return {counter, handlerSumar, handlerRestar}
 }

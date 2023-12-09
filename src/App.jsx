@@ -9,8 +9,13 @@ import  Navegador from './components/Navegador/Navegador';
 
 import { ItemDetailBatch } from './components/ItemDetailContainer/ItemDetailContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemCounter } from './components/ItemCounter/ItemCounter';
 
 function App() {
+
+  const onAdd = (cantidad) => {
+    console.log(cantidad)
+  }
 
   return (
     <Router>
@@ -24,6 +29,7 @@ function App() {
         <Route path='*' element ={<Navigate to='/'/>} />
         </Routes>
 
+        <ItemCounter onAdd={onAdd} />
 
       </div>
     </Router>
