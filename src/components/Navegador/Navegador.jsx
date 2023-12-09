@@ -31,7 +31,7 @@ const Navegador = ()=> {
                     </NavDropdown> */}
                     </Nav>
                     <Nav>
-                    <Nav.Link href="#deets" className="text-light">Shop!</Nav.Link>
+                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light text-dark' : 'btn text-light'} to='/cart'>Shop!</NavLink>
                     <Nav.Link eventKey={2} href="#memes">
                         <Link>
                            <CartWidget />
