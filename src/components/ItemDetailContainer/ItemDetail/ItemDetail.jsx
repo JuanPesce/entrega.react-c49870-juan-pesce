@@ -5,7 +5,7 @@ import { ItemCounter } from "../../ItemCounter/ItemCounter"
 
 export const ItemDetail =({ product }) =>{
 
-    const {addProduct } = useCartContext ( CartContext )
+    const {addProduct } = useCartContext ( )
 
 
     const onAdd = (cantidad) => {
