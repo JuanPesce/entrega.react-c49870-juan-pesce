@@ -6,11 +6,15 @@ import { ItemDetail } from "./ItemDetail/ItemDetail"
 
 export const ItemDetailBatch = () => {
     const   [product, setproduct] = useState({})
+    const [loading, setLoading] = useState(true)
+
     const {pid} = useParams()
     useEffect(()=>{
         mFetch(pid)
         .then(res=> setproduct(res))
         .catch(err=> console.log('Error: ',err))
+        .finally(() => setLoading(false))
+
                 
     }, [] )
 
@@ -20,7 +24,18 @@ export const ItemDetailBatch = () => {
 
 
 return(
-    <ItemDetail product = {product}/>
+    <>
+    {
+        loading ?
+        <h2>Cargando...</h2>
+            :
+      
+        <ItemDetail product = {product}/>
+    }
+
+    
+    </>
+
 
 )
 }
