@@ -8,7 +8,7 @@ import { useState } from "react"
 export const ItemDetail =({ product }) =>{
     const [isCounter, setIsCounter] = useState(true)
 
-    const {addProduct } = useCartContext ( )
+    const {addProduct } = useCartContext ()
 
 
     const onAdd = (cantidad) => {
@@ -22,7 +22,7 @@ export const ItemDetail =({ product }) =>{
         <h2>Descripcion del Producto</h2>
     </div>
     <div className="col-6 text-center mt-5">
-            <img src={product.imagen} alt={'image'} className="img-fluid   " />
+            <img src={product.imagen} alt={'imagen'} className="img-fluid   " />
         </div>
         <div className="col-6 mt-5">
             <h2>{product.name}</h2>
