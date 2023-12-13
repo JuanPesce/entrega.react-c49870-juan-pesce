@@ -31,11 +31,8 @@ const Navegador = ()=> {
                     </NavDropdown> */}
                     </Nav>
                     <Nav>
-                    <NavLink className={( { isActive } ) => isActive ? 'btn btn-light text-dark' : 'btn text-light'} to='/cart'>Shop!</NavLink>
+                    <NavLink className={'btn btn-light text-dark'} to='/cart'><CartWidget /></NavLink>
                     <Nav.Link eventKey={2} href="#memes">
-                        <Link>
-                           <CartWidget />
-                        </Link> 
                       </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

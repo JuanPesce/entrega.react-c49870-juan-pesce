@@ -3,7 +3,7 @@ import { useCartContext } from "../contexts/CartContext"
 
 export const CartContainer = () =>{
 
-    const {cartList, vaciarCarrito} = useCartContext()
+    const {cartList, vaciarCarrito, totalPrecio, removeProduct} = useCartContext()
 
     const handleOrder = () => {
         const order = {}
@@ -25,9 +25,12 @@ export const CartContainer = () =>{
             {cartList.map(product => <div key={product.id}>
                                             <img className="w-25" src={product.imagen}/>
                                             Cantidad: {product.cantidad} - Precio: ${product.precio} - Subtotal: ${product.precio * product.cantidad}
-                                            <button className="btn btn-danger"> X </button>
+                                            <button className="btn btn-danger" onClick={() => removeProduct(product.id)} > X </button>
                                         </div>
                 )}
+                <div>
+                    { totalPrecio() !== 0 && <label>Precio total: ${totalPrecio()} </label>}
+                </div>
             <button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar!</button>
             <button className="btn btn-danger" onClick={handleOrder}>Terminar Compra</button>
         </div>
