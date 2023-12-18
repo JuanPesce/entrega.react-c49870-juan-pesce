@@ -20,19 +20,29 @@ export const CartContainer = () =>{
         order.buyer = formData
         order.item = cartList.map (({id, name, precio}) => ({id, name, precio}))
         order.total = totalPrecio()
-        // console.log(order)
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            alert('Error! Favor de ingresar un mail valido!');
+            return;}
+
+        if (formData.email !== formData.repetirEmail) {
+                alert('Error! El Email no coincide!');
+                return;
+            }
 
         const db = getFirestore()
         const orderCollection = collection(db, 'orders')
         addDoc(orderCollection, order)
-        .then(resp => setIsID(resp))
+        .then(resp => setIsID(resp.id))
         .catch(err => console.log(err))
         .finally(()=>{
 
             setFormData({ 
                 name: '',
                 phone: '',
-                email: ''
+                email: '',
+                repetirEmail: ''
             }),
             vaciarCarrito()
         }
@@ -48,9 +58,9 @@ export const CartContainer = () =>{
 
     return(
         <div>
-            {/* {isID !== '' && <>
-            <label>La orden de compra es: {isID}</label>
-            </>} */}
+            {isID !== '' && <>
+            <label>Felicitaciones! La orden de compra es: {isID}</label>
+            </>}
             {cartList.map(product => <div key={product.id}>
                                             <img className="w-25" src={product.imagen}/>
                                             Cantidad: {product.cantidad} - Precio: ${product.precio} - Subtotal: ${product.precio * product.cantidad}
@@ -90,7 +100,13 @@ export const CartContainer = () =>{
                     name="email"
                     value={formData.email} 
                     onChange={ handleOnChange } 
-                    />
+                    /><br /><label> Repetir Email</label><br />
+                <input 
+                    type="text"
+                    name="repetirEmail"
+                    value={formData.repetirEmail} 
+                    onChange={ handleOnChange } 
+                    /><br /><br />   
             </form>
         
             <button className="btn btn-danger" onClick={handleOrder}>Terminar Compra</button>
