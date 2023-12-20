@@ -1,6 +1,7 @@
 Entrega Proyecto React JS Juan Pesce
 
 Demo Deploy: https://658374de38826a7366269a27--juan-pesce-react-proyecto-ecommerce.netlify.app/
+
 Resumen: Ecommerce de yerba mate con diferentes tipos de mate segun tipo de producto (comun, organica o barbacua). Permite generar ordenes de compra que impactan en firebase asi como tambien encontraran la base de datos de los productos alli.
 
 |Plugin|Readme|
