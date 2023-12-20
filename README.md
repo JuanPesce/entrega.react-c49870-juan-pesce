@@ -7,7 +7,6 @@ Resumen: Ecommerce de yerba mate con diferentes tipos de mate segun tipo de prod
 |------|------|
 |Firebase 10.7.1| Usamos la funcionalidad firebase como base de datos|
 |React router dom 6.18.0| Agregar enrutador para la app|
-|Bootstrap 5.3.2| Usamos el diseño para el navegador|
 |React Bootstrap 2.9.1| Usamos el diseño para el navegador|
 |React 18.2.0| Uso de las funcionalidades de React|
 
