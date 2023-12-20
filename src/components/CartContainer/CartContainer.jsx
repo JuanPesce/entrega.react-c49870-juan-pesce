@@ -25,6 +25,11 @@ export const CartContainer = () =>{
         if (!emailRegex.test(formData.email)) {
             alert('Error! Favor de ingresar un mail valido!');
             return;}
+        
+        if (!formData.name || !formData.phone || !formData.email || !formData.repetirEmail) {
+                alert('Error! Favor de completar los campos para efectuar la compra');
+                return;
+            }
 
         if (formData.email !== formData.repetirEmail) {
                 alert('Error! El Email no coincide!');
